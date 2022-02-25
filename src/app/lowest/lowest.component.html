@@ -3,21 +3,69 @@
     Near 52 Week's Lowest Price
   </nb-card-header>
   <nb-card-body>
-    <hot-table
-      [colHeaders]="true"
-      [rowHeaders]="true"
-      [data]="this.tableData"
-      licenseKey="non-commercial-and-evaluation">
-      <hot-column data="itemCode" [readOnly]="true" title="Code"></hot-column>
-      <hot-column data="totalShare" [readOnly]="true" title="Total Share"></hot-column>
-      <hot-column data="yearEnd" [readOnly]="true"  title="Year End"></hot-column>
-      <hot-column data="lastTradingPrice" [readOnly]="true"  title="LTP"></hot-column>
-      <hot-column data="movingRange52" [readOnly]="true"  title="Moving Range"></hot-column>
-      <hot-column data="marketCategory" [readOnly]="true"  title="Category"></hot-column>
-      <hot-column data="movingRange52" [readOnly]="true"  title="ID"></hot-column>
-      <hot-column data="paidUpCapitalTotal" [readOnly]="true"  title="PAID UP Capital"></hot-column>
-      <hot-column data="authorizedCapital" [readOnly]="true"  title="Authorized Capital"></hot-column>
-    </hot-table>
+    <kendo-grid
+      [kendoGridBinding]="gridData"
+      [pageSize]="20"
+      [pageable]="true"
+      [sortable]="true"
+      [resizable]="true"
+      [height]="500"
+    >
+      <kendo-grid-column
+        field="itemCode"
+        title="Item Code">
+      </kendo-grid-column>
+      <kendo-grid-column
+        field="yearEnd"
+        title="Year End">
+      </kendo-grid-column>
+      <kendo-grid-column
+        field="totalShare"
+        title="Total Share">
+      </kendo-grid-column>
+      <kendo-grid-column
+        title="Moving Range">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <p>{{dataItem.movingRange52}}</p>
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column
+        field="ltp"
+        title="LTP">
+      </kendo-grid-column>
+      <kendo-grid-column
+        title="Paid/Authorized Cap">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          {{dataItem.paidUpCapital}}/ {{dataItem.authorizedCapital}}
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column
+        title="Category">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          {{dataItem.marketCategory}}
+        </ng-template>
+      </kendo-grid-column>
+
+    </kendo-grid>
+
+
+
+
+<!--    <hot-table-->
+<!--      [colHeaders]="true"-->
+<!--      [rowHeaders]="true"-->
+<!--      [data]="this.tableData"-->
+<!--      licenseKey="non-commercial-and-evaluation">-->
+<!--      <hot-column data="itemCode" [readOnly]="true" title="Code"></hot-column>-->
+<!--      <hot-column data="totalShare" [readOnly]="true" title="Total Share"></hot-column>-->
+<!--      <hot-column data="yearEnd" [readOnly]="true"  title="Year End"></hot-column>-->
+<!--      <hot-column data="lastTradingPrice" [readOnly]="true"  title="LTP"></hot-column>-->
+<!--      <hot-column data="movingRange52" [readOnly]="true"  title="Moving Range"></hot-column>-->
+<!--      <hot-column data="marketCategory" [readOnly]="true"  title="Category"></hot-column>-->
+<!--      <hot-column data="movingRange52" [readOnly]="true"  title="ID"></hot-column>-->
+<!--      <hot-column data="paidUpCapitalTotal" [readOnly]="true"  title="PAID UP Capital"></hot-column>-->
+<!--      <hot-column data="authorizedCapital" [readOnly]="true"  title="Authorized Capital"></hot-column>-->
+<!--    </hot-table>-->
 
   </nb-card-body>
 </nb-card>

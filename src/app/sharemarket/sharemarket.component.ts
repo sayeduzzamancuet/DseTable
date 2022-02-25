@@ -7,7 +7,7 @@ import {FILTER, StockData} from "../models/StockItem";
   templateUrl: './sharemarket.component.html',
   styleUrls: ['./sharemarket.component.scss']
 })
-export class SharemarketComponent implements OnInit,OnDestroy {
+export class SharemarketComponent implements OnInit {
 
   stockData:any;
   tableData:FILTER[]=new Array<FILTER>();
@@ -20,9 +20,5 @@ export class SharemarketComponent implements OnInit,OnDestroy {
       this.tableData=data.FILTER;
     })
   }
-  ngOnDestroy(){
-    if(this.stockData!=undefined){
-      this.stockData?.unsubscribe();
-    }
-  }
+
 }

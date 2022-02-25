@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SharemarketComponent } from './sharemarket/sharemarket.component';
 import { HttpClientModule} from "@angular/common/http";
-import { HotTableModule } from '@handsontable/angular';
-import { registerAllModules } from 'handsontable/registry';
 import {
   NbButtonModule,
   NbCardModule,
@@ -16,10 +14,15 @@ import {
 } from "@nebular/theme";
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import {FormlyPrimeNGModule} from "@ngx-formly/primeng";
 import {FormlyModule} from "@ngx-formly/core";
 import { CalculatorComponent } from './calculator/calculator.component';
 import { LowestComponent } from './lowest/lowest.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {registerAllModules} from "handsontable/registry";
+import { GridModule } from '@progress/kendo-angular-grid';
+
+
+
 registerAllModules();
 @NgModule({
   declarations: [
@@ -31,8 +34,6 @@ registerAllModules();
   imports: [
     BrowserModule,
     HttpClientModule,
-    HotTableModule,
-    //RouterModule.forRoot(routes, { useHash: true }),
     NbLayoutModule,
     NbSidebarModule.forRoot(), // NbSidebarModule.forRoot(), //if this is your app.module
     NbButtonModule,
@@ -43,7 +44,8 @@ registerAllModules();
     NbTabsetModule,
     ReactiveFormsModule,
     FormlyModule.forRoot(),
-    FormlyPrimeNGModule
+    BrowserAnimationsModule,
+    GridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

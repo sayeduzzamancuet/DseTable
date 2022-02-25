@@ -1,7 +1,7 @@
 <nb-layout>
 
-  <nb-layout-header>Welcome</nb-layout-header>
-  <nb-layout-footer>Footer</nb-layout-footer>
+  <nb-layout-header><button nbButton status="primary" outline (click)="toggle()">Toggle</button></nb-layout-header>
+
   <nb-layout-column>
     <nb-card>
       <nb-card-body>
@@ -12,4 +12,5 @@
   <nb-sidebar>
     <nb-menu [items]="items"></nb-menu>
   </nb-sidebar>
+  <nb-layout-footer>Thank You</nb-layout-footer>
 </nb-layout>
