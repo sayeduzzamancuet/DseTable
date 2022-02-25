@@ -1,0 +1,23 @@
+<nb-card>
+  <nb-card-header>
+    Near 52 Week's Lowest Price
+  </nb-card-header>
+  <nb-card-body>
+    <hot-table
+      [colHeaders]="true"
+      [rowHeaders]="true"
+      [data]="this.tableData"
+      licenseKey="non-commercial-and-evaluation">
+      <hot-column data="itemCode" [readOnly]="true" title="Code"></hot-column>
+      <hot-column data="totalShare" [readOnly]="true" title="Total Share"></hot-column>
+      <hot-column data="yearEnd" [readOnly]="true"  title="Year End"></hot-column>
+      <hot-column data="lastTradingPrice" [readOnly]="true"  title="LTP"></hot-column>
+      <hot-column data="movingRange52" [readOnly]="true"  title="Moving Range"></hot-column>
+      <hot-column data="marketCategory" [readOnly]="true"  title="Category"></hot-column>
+      <hot-column data="movingRange52" [readOnly]="true"  title="ID"></hot-column>
+      <hot-column data="paidUpCapitalTotal" [readOnly]="true"  title="PAID UP Capital"></hot-column>
+      <hot-column data="authorizedCapital" [readOnly]="true"  title="Authorized Capital"></hot-column>
+    </hot-table>
+
+  </nb-card-body>
+</nb-card>
