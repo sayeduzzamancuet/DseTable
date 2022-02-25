@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PricechartComponent } from './pricechart/pricechart.component';
 import { SharemarketComponent } from './sharemarket/sharemarket.component';
 import { HttpClientModule} from "@angular/common/http";
 import { HotTableModule } from '@handsontable/angular';
 import { registerAllModules } from 'handsontable/registry';
-import { ProjectedpriceComponent } from './projectedprice/projectedprice.component';
 import {
   NbButtonModule,
   NbCardModule,
@@ -26,9 +24,7 @@ registerAllModules();
 @NgModule({
   declarations: [
     AppComponent,
-    PricechartComponent,
     SharemarketComponent,
-    ProjectedpriceComponent,
     CalculatorComponent,
     LowestComponent,
   ],
