@@ -1,22 +1,65 @@
-<nb-card>
-  <nb-card-header>Profit/Loss</nb-card-header>
-  <nb-card-body>
-    <div class="row">
-      <div class="col-md-2">
-        <label>Buy Price</label>
+<div class="container-fluid">
+  <nb-card style="width: 200px;height: 130px;display: inline-block;">
+    <nb-card-header>{{itemCode.value}}</nb-card-header>
+    <nb-card-body>
+      <div class="container">
+        <table style="border: 1px">
+          <tr>
+            <th>Qty</th>
+            <th>Avg</th>
+          </tr>
+          <tr>
+            <td>{{qty}}</td>
+            <td>{{averageBuy?.toFixed(2)}}</td>
+          </tr>
+        </table>
       </div>
-      <div class="col-md-4">
-        <input type="text" nbInput />
-      </div>
+    </nb-card-body>
+  </nb-card>
+  <nb-card>
+    <nb-card-header>Average Calculator</nb-card-header>
+    <nb-card-body>
+      <form [formGroup]="averageForm">
+        <div class="form-group">
+          <label for="code">Item Code</label>
+          <input nbInput type="text" #itemCode formControlName="Code" name="code" id="code">
+        </div>
+        <div class="form-group">
+          <label for="qty">Qty</label>
+          <input nbInput type="number" formControlName="Qty" #quantity name="qty" id="qty">
+        </div>
+        <div class="row" style="display: inline-flex">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input nbInput type="number" formControlName="Price" #price name="price" id="price">
+            </div>
+          </div>
+          <div class="col-6 ml-2">
+            <div class="form-group">
+              <label>Total Cost</label>
+              <p class="ml-2" style="color: darkgreen;font-weight: bold">{{price.valueAsNumber*quantity.valueAsNumber}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group">
+            <label for="action">Action</label>
+            <nb-select fullWidth id="action" formControlName="Action">
+              <nb-option value="BUY">Buy</nb-option>
+              <nb-option value="SELL">Sell</nb-option>
+            </nb-select>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 2px">
+          <div class="col-md-4">
+            <button fullWidth type="button" nbButton (click)="Update()" status="primary">Add</button>
+          </div>
+        </div>
+      </form>
+    </nb-card-body>
+  </nb-card>
+</div>
 
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <label>Sell Price</label>
-      </div>
-      <div class="col-md-4">
-        <input type="text" nbInput />
-      </div>
-    </div>
-  </nb-card-body>
-</nb-card>
+
+

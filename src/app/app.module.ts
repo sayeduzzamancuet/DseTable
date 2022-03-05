@@ -6,9 +6,9 @@ import { SharemarketComponent } from './sharemarket/sharemarket.component';
 import { HttpClientModule} from "@angular/common/http";
 import {
   NbButtonModule,
-  NbCardModule,
+  NbCardModule, NbInputModule,
   NbLayoutModule,
-  NbMenuModule,
+  NbMenuModule, NbSelectModule,
   NbSidebarModule, NbTabsetModule,
   NbThemeModule
 } from "@nebular/theme";
@@ -18,12 +18,8 @@ import {FormlyModule} from "@ngx-formly/core";
 import { CalculatorComponent } from './calculator/calculator.component';
 import { LowestComponent } from './lowest/lowest.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {registerAllModules} from "handsontable/registry";
 import { GridModule } from '@progress/kendo-angular-grid';
 
-
-
-registerAllModules();
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,9 +39,11 @@ registerAllModules();
     NbCardModule,
     NbTabsetModule,
     ReactiveFormsModule,
+    NbInputModule,
     FormlyModule.forRoot(),
     BrowserAnimationsModule,
-    GridModule
+    GridModule,
+    NbSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
