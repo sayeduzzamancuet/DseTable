@@ -12,34 +12,34 @@
       [height]="500"
     >
       <kendo-grid-column
-        field="itemCode"
+        field="itemCode" [autoSize]="true"
         title="Code">
       </kendo-grid-column>
       <kendo-grid-column
-        field="yearEnd"
+        field="yearEnd" [autoSize]="true"
         title="Year End">
       </kendo-grid-column>
       <kendo-grid-column
-        field="totalShare"
+        field="totalShare" [autoSize]="true"
         title="Total Share">
       </kendo-grid-column>
-      <kendo-grid-column
+      <kendo-grid-column [autoSize]="true"
         title="Moving Range">
         <ng-template kendoGridCellTemplate let-dataItem>
           <p>{{dataItem.movingRange52}}</p>
         </ng-template>
       </kendo-grid-column>
-      <kendo-grid-column
+      <kendo-grid-column [autoSize]="true"
         field="ltp"
         title="LTP">
       </kendo-grid-column>
-      <kendo-grid-column
+      <kendo-grid-column [autoSize]="true"
         title="Paid/Authorized Cap">
         <ng-template kendoGridCellTemplate let-dataItem>
           {{dataItem.paidUpCapital}}/ {{dataItem.authorizedCapital}}
         </ng-template>
       </kendo-grid-column>
-      <kendo-grid-column
+      <kendo-grid-column [autoSize]="true"
         title="Category">
         <ng-template kendoGridCellTemplate let-dataItem>
           {{dataItem.marketCategory}}
